@@ -1,8 +1,11 @@
 import { CollectionConfig } from 'payload/types'
 import { RowLabelArgs } from 'payload/dist/admin/components/forms/RowLabel/types'
 
-export const ExampleCollection: CollectionConfig = {
-  slug: 'example-collection',
+export const SliderList: CollectionConfig = {
+  slug: 'slider-list',  
+  access: {
+    read: () => true,
+  },
   fields: [
     {
       name: 'slider', // required
