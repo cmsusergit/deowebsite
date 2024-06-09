@@ -15,8 +15,17 @@ try {
   console.log(err)
 }
 ---
+<header>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+</header>
 <Layout title="Welcome to Astro.">	
-	<main>		
+
+	<main class="grid grid-cols-1 gap-y-1">		
 		<Slider sliderList={dt_sliderlist} client:load/>
 		<Feature/>
 		<Gallery/>
