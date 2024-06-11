@@ -12,13 +12,27 @@ const geturl = (fn) => {
   return "http://localhost:4004" + fn;
 };
 ---
-<div class="bg-[#887BB0] shadow-lg shadow-slate-800  w-full">
-  <div class="md:w-10/12 px-4 py-10 sm:px-4 lg:px-8 lg:py-14 mx-auto">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-[4] gap-2">
+
+<div class="w-full">
+  <div class="md:w-10/12 px-4 py-12 sm:px-4 lg:px-8 lg:py-20 mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
       {
         dt.docs.map((record) => (
           <>
-            <div class="bg-[#FFF4BD] text-slate-800 group shadow-lg shadow-slate-800 flex flex-col rounded-xl p-4 md:p-7 ">
+            <div class="card card-compact bg-base-100 shadow hover:shadow-xl hover:animate-[gray_1s_ease-in-out] hover:grayscale hover:cursor-pointer transition-all delay-200">
+              <figure>
+                <img
+                  class="aspect-square md:size-full"
+                  src={geturl(record.image.url)}
+                  alt={record.image.alt}
+                />
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title">{record.name}</h2>
+                <p>{record.description}</p>
+              </div>
+            </div>
+            {/*<div class="group shadow-lg shadow-slate-400 flex flex-col rounded-xl p-4 md:p-7 ">
               <div class="flex justify-center items-center  rounded-xl">
                 <img
                   src={geturl(record.image.url)}
@@ -34,14 +48,13 @@ const geturl = (fn) => {
                   {record.description}
                 </p>
               </div>
-            </div>
+            </div>*/}
           </>
         ))
       }
     </div>
   </div>
 </div>
-
 <!-- End Icon Blocks -->
 <!-- <div class="max-w-[84rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

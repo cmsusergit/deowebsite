@@ -1,37 +1,39 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import "../app.css";
 
-import Footr from '../components/foot.astro';
-import Feature from '../components/featuresection.astro';
-import Gallery from '../components/gallerysection.astro';
-import Slider from '../components/slider.jsx'
-const url1='http://localhost:4004/api/slider-list/66642ec165e6e93f30d9d3d1?draft=false&depth=1'
-let dt_sliderlist
+import Layout from "../layouts/Layout.astro";
+import Feature from "../components/featuresection.astro";
+import Gallery from "../components/gallerysection.astro";
+import Slider from "../components/slider.jsx";
+const url1 =
+  "http://localhost:4004/api/slider-list/66642ec165e6e93f30d9d3d1?draft=false&depth=1";
+let dt_sliderlist;
 try {
-  const req = await fetch(url1)
-  dt_sliderlist = await req.json()
-
+  const req = await fetch(url1);
+  dt_sliderlist = await req.json();
 } catch (err) {
-  console.log(err)
+  console.log(err);
 }
 ---
-<header>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
-</header>
-<Layout title="Welcome to Astro.">	
 
-	<main class="grid grid-cols-1 gap-y-1">		
-		<Slider sliderList={dt_sliderlist} client:load/>
-		<Feature/>
-		<Gallery/>
-		<Footr></Footr>
-	</main>
+<Layout title="DeoWebsite">
+  {/*<Slider sliderList={dt_sliderlist} client:load />*/}
+  <div class="hero min-h-[28rem] bg-base-200 relative">
+    <div
+      class="bg-white absolute left-50 top-50 w-[50%] h-[50%] md:w-[75%] md:h-[100%] rounded-full z-100 blur-xl md:blur-2xl transition-all delay-100"
+    >
+    </div>
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold">Hello there</h1>
+        <p class="py-2">
+          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+          excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
+          id nisi.
+        </p>
+      </div>
+    </div>
+  </div>
+  <Feature />
+  <Gallery />
 </Layout>
-
-
-

@@ -2,11 +2,13 @@
 interface Props {
 	title: string;
 }
-import Header from '../components/header.astro';
+import Header from "../components/header.astro";
+import Footr from "../components/foot.astro";
 const { title } = Astro.props;
 ---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="corporate">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -16,10 +18,10 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-
-		<Header/>
-		<slot />
+		<Header />
+		<main class="container mx-auto grid grid-cols-1 min-h-screen gap-y-1">
+			<slot />
+		</main>
+		<Footr />
 	</body>
 </html>
-
-

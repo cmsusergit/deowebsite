@@ -1,37 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import Footr from '../components/foot.astro';
-import Feature from '../components/featuresection.astro';
-import Gallery from '../components/gallerysection.astro';
-import Slider from '../components/slider.jsx'
-const url1='http://localhost:4004/api/slider-list/66642ec165e6e93f30d9d3d1?draft=false&depth=1'
-let dt_sliderlist
+const url1 =
+  "http://localhost:4004/api/slider-list/66642ec165e6e93f30d9d3d1?draft=false&depth=1";
+let dt_sliderlist;
 try {
-  const req = await fetch(url1)
-  dt_sliderlist = await req.json()
-
+  const req = await fetch(url1);
+  dt_sliderlist = await req.json();
 } catch (err) {
-  console.log(err)
+  console.log(err);
 }
 ---
-<header>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
-</header>
-<Layout title="Welcome to Astro.">	
 
-	<main class="grid grid-cols-1 gap-y-1">		
-		<Slider sliderList={dt_sliderlist} client:load/>
-		<Feature/>
-		<Gallery/>
-		<Footr></Footr>
-	</main>
+<Layout title="DeoWebsite">
+  <h1 class="text-xl text-center">Schools Page</h1>
 </Layout>
-
-
-

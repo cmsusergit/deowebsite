@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import sanity from "@sanity/astro";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
@@ -7,11 +7,15 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   server: {
     port: 4040,
-    host: true
+    host: true,
   },
-  integrations: [sanity({
-    projectId: "9kplpxfq",
-    dataset: "testproject",
-    useCdn: false
-  }), react(), tailwind()]
+  integrations: [
+    sanity({
+      projectId: "9kplpxfq",
+      dataset: "testproject",
+      useCdn: false,
+    }),
+    react(),
+    tailwind({ config: { applyBaseStyles: false } }),
+  ],
 });

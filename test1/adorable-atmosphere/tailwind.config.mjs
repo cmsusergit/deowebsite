@@ -6,9 +6,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      poppin: ["Poppins", "sans-serif"],
-      body: ["poppin"],
-      display: ["poppin"],
+      poppin: ["mina", "Poppins", "sans-serif"],
     },
     extend: {
       keyframes: {
@@ -18,8 +16,19 @@ export default {
 
           "75%": { transform: "rotate(-5deg)" },
         },
+
+        gray: {
+          "0%": { filter: "grayscale(0)" },
+          "100%": { filter: "grayscale(100%)" },
+        },
       },
     },
   },
-  plugins: [require("preline/plugin")],
+  plugins: [require("daisyui"), require("preline/plugin")],
+
+  daisyui: {
+    themes: ["light", "corporate"],
+    base: true,
+    styled: true,
+  },
 };
