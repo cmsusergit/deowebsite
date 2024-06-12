@@ -1,34 +1,29 @@
-import { CollectionConfig } from 'payload/types'
-const Features: CollectionConfig = {
-  slug: 'features',
+import { CollectionConfig } from "payload/types";
+const Config: CollectionConfig = {
+  slug: "config",
   access: {
     read: () => true,
   },
   fields: [
     {
-        name:'name',
-        type:'text',
-        required:true
+      name: "heaer_text",
+      type: "text",
+      required: true,
     },
     {
-        name:'image',
-        type:'upload',
-        
-        relationTo:'media',
-        required:true
-
+      name: "subheader_text",
+      type: "text",
+      required: true,
     },
     {
-        name:'description',
-        type:'textarea'
-    } ,
+      name: "content",
+      type: "textarea",
+    },
     {
-      name:'url',
-      type:'text'
-    }   
+      name: "bg_imade",
+      type: "upload",
+      relationTo: "media",
+    },
   ],
-}
-export default Features
-
-
-
+};
+export default Config;

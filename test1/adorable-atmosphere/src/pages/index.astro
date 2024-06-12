@@ -4,35 +4,35 @@ import "../app.css";
 import Layout from "../layouts/Layout.astro";
 import Feature from "../components/featuresection.astro";
 import Gallery from "../components/gallerysection.astro";
-import Slider from "../components/slider.jsx";
-const url1 =
-  "http://localhost:4004/api/slider-list/66642ec165e6e93f30d9d3d1?draft=false&depth=1";
-let dt_sliderlist;
+import Card from "../components/Card.astro";
+const url1 = "http://localhost:4004/api/config?depth=1";
+let dt_config;
 try {
   const req = await fetch(url1);
-  dt_sliderlist = await req.json();
+  const dt = await req.json();
+  dt_config = dt?.docs[0];
 } catch (err) {
   console.log(err);
 }
 ---
 
 <Layout title="DeoWebsite">
-  {/*<Slider sliderList={dt_sliderlist} client:load />*/}
   <div class="hero min-h-[28rem] bg-base-200 relative">
     <div
       class="bg-white absolute left-50 top-50 w-[50%] h-[50%] md:w-[75%] md:h-[100%] rounded-full z-100 blur-xl md:blur-2xl transition-all delay-100"
     >
     </div>
     <div class="hero-content text-center">
-      <div class="max-w-md">
-        <h1 class="text-5xl font-bold">Hello there</h1>
-        <p class="py-2">
-          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-          excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
-          id nisi.
-        </p>
+      <div class="md:w-10/12">
+        <h1 class="text-4xl font-bold">{dt_config.heaer_text}</h1>
+        <p class="font-bold text-md">{dt_config.subheader_text}</p>
+        <p class="py-2">{dt_config.content}</p>
       </div>
     </div>
+  </div>
+
+  <div>
+    <Card />
   </div>
   <Feature />
   <Gallery />

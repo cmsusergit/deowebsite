@@ -1,4 +1,6 @@
 ---
+import Slider from "./slider";
+
 let imageList = [
     "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     "https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
@@ -12,7 +14,7 @@ let imageList = [
 ---
 
 <div class="bg-base-200 w-full">
-    <div class="md:w-10/12 px-4 py-12 sm:px-4 lg:px-8 lg:py-20 mx-auto">
+    <div class="container px-4 py-12 sm:px-4 lg:px-8 lg:py-20 mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
             {
                 imageList.map((ii) => (
