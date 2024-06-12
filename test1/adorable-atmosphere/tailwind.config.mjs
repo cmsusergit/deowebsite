@@ -1,3 +1,5 @@
+import { transformer } from "astro/zod";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -16,18 +18,29 @@ export default {
 
           "75%": { transform: "rotate(-5deg)" },
         },
-
         gray: {
           "0%": { filter: "grayscale(0)" },
           "100%": { filter: "grayscale(100%)" },
+        },
+
+        zoomin: {
+          "0%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+          "100%": { transform: "scale(1)" },
+        },
+
+        flip: {
+          "0%": { transform: "rotateY(0deg)" },
+
+          "50%": { transform: "rotateY(90deg)" },
+          "100%": { transform: "rotateY(0deg)" },
         },
       },
     },
   },
   plugins: [require("daisyui"), require("preline/plugin")],
-
   daisyui: {
-    themes: ["light", "corporate"],
+    themes: ["light", "lofi", "autumn", "retro", "corporate"],
     base: true,
     styled: true,
   },
