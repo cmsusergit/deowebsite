@@ -13,18 +13,25 @@ let imageList = [
 ];
 ---
 
-<div class="bg-base-200 w-full">
-    <div class="container px-4 py-12 sm:px-4 lg:px-8 lg:py-20 mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-            {
-                imageList.map((ii) => (
-                    <img
-                        class="size-72 object-cover rounded-lg shadow-lg shadow-slate-800 hover:cursor-pointer hover:animate-[tilt_.7s_ease-in-out_1]"
-                        src={ii}
-                        alt="Image Description"
-                    />
-                ))
-            }
-        </div>
+<div class="container px-4 py-12 sm:px-4 lg:px-8 lg:py-20">
+    <div
+        class="bg-secondary text-white px-4 py-2
+	
+    w-4/12 text-lg uppercase font-bold rounded-t-xl"
+    >
+        Gallery
+    </div>
+    <div
+        class="border border-secondary shadow shadow-secondary p-2 grid grid-cols-2 md:grid-cols-4 justify-items-center gap-2"
+    >
+        {
+            imageList.map((ii) => (
+                <img
+                    class="size-72 object-cover rounded-lg shadow-lg shadow-slate-800 hover:cursor-pointer hover:animate-[tilt_.7s_ease-in-out_1]"
+                    src={ii}
+                    alt="Image Description"
+                />
+            ))
+        }
     </div>
 </div>

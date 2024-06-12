@@ -3,7 +3,29 @@ export default function Slider({ sliderList }) {
   const [currindx, setCurrIndx] = useState(0);
   return (
     <>
-      <div className="min-h-72 w-full shadow-lg shadow-slate-800 relative">
+      <div className="flex w-full px-4 py-0 space-x-1 overflow-x-scroll">
+        {sliderList.map((slider, indx) => {
+          return (
+            <div className="carousel-item border">
+              {/* <img src={slider} class="rounded-box size-72" /> */}
+              <div className="card md:w-[40rem] w-[28rem] bg-base-100 shadow-xl">
+                <div className="card-body">
+                  <h2 className="card-title underline">{slider.title}</h2>
+                  <p className="card-content text-justify">
+                    {slider.description}
+                  </p>
+                  <div className="card-actions justify-end">
+                    <button className="btn btn-secondary text-white rounded">
+                      DOWNLOAD
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {/* <div className="min-h-72 w-full shadow-lg shadow-slate-800 relative">
         {sliderList.map((slider, indx) => {
           return (
             indx == currindx && (
@@ -72,7 +94,7 @@ export default function Slider({ sliderList }) {
             </svg>
           </span>
         </button>
-      </div>
+      </div> */}
     </>
   );
 }
